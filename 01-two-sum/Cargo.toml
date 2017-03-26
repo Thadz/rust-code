@@ -1,0 +1,6 @@
+[package]
+name = "01-two-sum"
+version = "0.1.0"
+authors = ["honglinz <zhang.t.honglin@gmail.com>"]
+
+[dependencies]
