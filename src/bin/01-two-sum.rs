@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 #[test]
 fn it_works() {
     assert_eq!(two_sum(&[0, 1, 2], 3), (1, 2));
@@ -7,6 +5,7 @@ fn it_works() {
 }
 
 fn two_sum(nums: &[i32], target: i32) -> (usize, usize) {
+    use std::collections::HashMap;
     let mut id2value: HashMap<i32, usize> = HashMap::new();
     for i in 0..nums.len() {
         id2value.insert(nums[i], i);
@@ -19,8 +18,8 @@ fn two_sum(nums: &[i32], target: i32) -> (usize, usize) {
             } else {
                 (*r, *l)
             },
-            (None   , Some(_)) => (),
-            (Some(_), None   ) => (),
+            (None   , Some(_)) |
+            (Some(_), None   ) |
             (None   , None   ) => (),
         }
     }
