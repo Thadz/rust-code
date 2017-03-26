@@ -22,7 +22,7 @@
              for left_char in
                  left_iter
                      .by_ref() // so that we can still use left_iter later
-                     .take_while(|x| *x != right_char) {
+                     .take_while(|&x| x != right_char) {
 
                  tracking_set.remove(&left_char);
              }
@@ -31,4 +31,3 @@
      }
      max_length
  }
- 
